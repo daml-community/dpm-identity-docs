@@ -7,8 +7,6 @@ We must first generate a `gpg` key, if you do not already have one, to represent
 2. Exporting the subkey public key
 3. Exporting your github id
 
-The following setup script automates the process of 
-
 ### Generating an organisation `gpg` key and creating a subkey
 To generate a `gpg` key and add a subkey, run:
 ```sh

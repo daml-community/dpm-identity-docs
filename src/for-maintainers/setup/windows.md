@@ -18,11 +18,11 @@ gpg --quick-generate-key "Org Name" rsa3072 default never
 gpg --quick-add-key '<pub-key-fingerprint>' rsa3072 sign 1y
 ```
 
-### Exporting the subkey
-To export the subkey run:
+### Exporting the primary key
+To export the primary key run:
 ```sh
-gpg --list-secret-keys --with-subkey-fingerprint
-gpg --export --armor "<SUBKEYFINGERPRINTNOSPACES>"
+gpg --list-secret-keys
+gpg --export --armor "<primary-key-fingerprint>"
 ```
 
 ### Exporting your github id

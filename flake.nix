@@ -9,7 +9,7 @@
     in
     {
       devShells.${system}.default = pkgs.mkShell {
-        name = "daml-identity-docs";
+        name = "dpm-identity-docs";
         buildInputs = [pkgs.mdbook];
       };
     };

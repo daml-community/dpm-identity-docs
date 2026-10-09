@@ -2,7 +2,7 @@
 The repository has the following structure:
 
 ```txt
-daml-identity/
+dpm-identity/
 ├── <org-1>/
 │   ├── _meta.json   <- Org metadata
 │   ├── alice.json   <- Person metadata

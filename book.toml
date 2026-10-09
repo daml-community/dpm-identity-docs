@@ -1,7 +1,7 @@
 [book]
-title = "daml-identity"
+title = "dpm-identity"
 authors = ["Obsidian Systems"]
 language = "en"
 
 [output.html]
-git-repository-url = "https://github.com/daml-community/daml-identity"
+git-repository-url = "https://github.com/daml-community/dpm-identity"

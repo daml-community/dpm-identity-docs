@@ -1,2 +1,2 @@
-# `daml-identity` docs
-Repository hosting the documentation for the [`daml-identity`](https://github.com/daml-community/daml-identity) repository
+# `dpm-identity` docs
+Repository hosting the documentation for the [`dpm-identity`](https://github.com/daml-community/dpm-identity) repository

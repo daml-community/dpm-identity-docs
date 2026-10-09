@@ -1,6 +1,6 @@
 # Summary
 
-[`daml-identity`](./_main.md)
+[`dpm-identity`](./_main.md)
 
 - [Repository Specification](./repo-structure/_main.md)
     - [File Structure](./repo-structure/files.md)

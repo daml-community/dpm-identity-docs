@@ -17,4 +17,4 @@ This documentation currently satisfies **M1**, however we are currently working 
 The documentation *required* for submission of M1 is as follows:
 
 - Submission and review workflow documented [here]()
-- Verification process [here]()
+- Verification process [here](./verification.md)

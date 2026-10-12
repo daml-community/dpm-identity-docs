@@ -1,69 +1,39 @@
 # File Structure
-The repository has the following structure:
-
-```txt
-dpm-identity/
-├── <org-1>/
-│   ├── _meta.json   <- Org metadata
-│   ├── alice.json   <- Person metadata
-│   ├── alice.pub    <- Person public key
-│   ├── bob.json
-│   ├── bob.pub
-│   ├── charlie.json
-│   └── charlie.pub
-│
-└── <org-2>/
-    ├── _meta.json
-    ├── <person>.json
-    ├── <person>.pub
-    └── ...
+The file structure we propose is:
+```
+identities/
+    <id>/
+        meta.json
+        FA31...A3/
+            key.asc
+            evidence/
+                ...
+        B491...D5/
+            key.asc
+            revoke.json
+            evidence/
+                ...
+audits/
+    <id-fp>-<package-id>-<date>.json
+    <id-fp>-<package-id>-<date>.json.sig
+    <id-fp>-<package-id>-<date>.revoke.json
+    <id-fp>-<package-id>-<date>.revoke.json.sig
 ```
 
-## Org Metadata
-Currently the org metadata simply contains `organisation.name`:
+Where:
 
-```json
-{
-  "organisation": {
-    "name": "Org A"
-  }
-}
-```
+- `identities/` contains directories corresponding to each identity in the repo
+    - `<id>/` is a directory containing the history of all keys for an identity. The naming convention here is that `<id>` is the `kebab-case` version of the `Name` field of the gpg keys.
+        - `meta.json`: Metadata about the identity
+        - `<key>/`: Directory containg information about a particular key
+            - `key.asc`: The exported GPG public key. Generated via `gpg --export --armor`
+            - `revoke.json`: A json file indicating that the key has been revoked and why.
+            - `evidence/`: Directory containing evidence used by the committee when evaluating the key's identity
+- `audits/` contains audits:
+    - `<id-fp>-<package-id>-<date>.json` is an audit of `<package-id>` by `<id-fp>` on `<date>`. Note: No claims are made by this filename, it's solely to reduce collisions. All of the significant content is contained within the file. It conforms to the specification outlined in `schemas/audit-report.json5`.
+    - `<id-fp>-<package-id>-<date>.json.sig` is the detached signature of the above file.
+    - `<id-fp>-<package-id>-<date>.json.revoke` expresses a revocation of the above file.
+    - `<id-fp>-<package-id>-<date>.json.revoke.sig` expresses the signature of the above file.
 
-### Fields
+We decide that a key for an identity is valid by checking that it hasn't been revoked.
 
-- `organisation.name` : The name of the organisation
-
-## Person Metadata
-A person can contain the following data:
-
-```json
-{
-  "name": "Alice",
-  "valid": [
-    {
-      "roles": ["auditor", "publisher"],
-      "from": "2020-01-01",
-      "to": "2021-01-01"
-    },
-    {
-      "roles": ["auditor"],
-      "from": "2026-01-01",
-      "to": "2027-01-01"
-    }
-  ]
-}
-```
-
-### Fields
-- `name` : Person's name
-- `valid[]` : A list of `{ from: ...,  to: ... }` declaring the periods of time during which these keys should be associated with this person
-- `valid[].from` : An ISO 8601 date specifying the starting date of a period
-- `valid[].to` : An ISO 8601 date specifying the finishing date of a period
-
-## Person Public Key
-Each `<person>.pub` file is a user's public gpg key. This can be exported by running:
-```sh
-gpg --export --armor <gpg-fingerprint> > <person-name>.pub
-```
-The fingerprint of a key can be obtained via `gpg --fingerprint`.

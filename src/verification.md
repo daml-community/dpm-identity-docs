@@ -5,6 +5,8 @@ Currently the repository's security policy amounts to checking that the working 
 gittuf clone git@github.com:daml-community/dpm-identity
 ```
 
+*NOTE:* cloning via `gittuf` is important, as it pulls the correct git refs.
+
 ## Listing the `gittuf` policy
 The gittuf policy can be listed via running:
 

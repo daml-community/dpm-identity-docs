@@ -1,5 +1,5 @@
 # Verification Process
-Currently the repository's security policy amounts to checking that the working tree satisfies gittuf policy. Ensure that [`gittuf` is installed](https://gittuf.dev/quickstart/), and that the repository has been cloned via:
+Currently the repository's security policy amounts to checking that the working tree satisfies gittuf policy. Ensure that [`gittuf` is installed](https://gittuf.dev/quickstart/), that gpg signing for commits [has been enabled](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key), and that the repository has been cloned via:
 
 ```sh
 gittuf clone git@github.com:daml-community/dpm-identity

@@ -46,6 +46,7 @@ The following demonstrates a user violating this policy by creating the files:
 without the changes being approved by two committee members. Ensuring that you have followed the instructions above to install `gittuf`, `gpg` and clone the repo, run the following:
 
 ```sh
+# Checkout master
 git checkout master
 
 # Create a new identity my-id

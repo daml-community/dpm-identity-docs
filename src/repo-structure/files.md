@@ -25,15 +25,15 @@ Where:
 - `identities/` contains directories corresponding to each identity in the repo
     - `<id>/` is a directory containing the history of all keys for an identity. The naming convention here is that `<id>` is the `kebab-case` version of the `Name` field of the gpg keys.
         - `meta.json`: Metadata about the identity
-        - `<key>/`: Directory containg information about a particular key
+        - `<key>/`: Directory containing information about a particular key
             - `key.asc`: The exported GPG public key. Generated via `gpg --export --armor`
-            - `revoke.json`: A json file indicating that the key has been revoked and why.
+            - `revoke.json`: A JSON file indicating that the key has been revoked and why.
             - `evidence/`: Directory containing evidence used by the committee when evaluating the key's identity
 - `audits/` contains audits:
     - `<id-fp>-<package-id>-<date>.json` is an audit of `<package-id>` by `<id-fp>` on `<date>`. Note: No claims are made by this filename, it's solely to reduce collisions. All of the significant content is contained within the file. It conforms to the specification outlined in `schemas/audit-report.json5`.
-    - `<id-fp>-<package-id>-<date>.json.sig` is the detached signature of the above file.
-    - `<id-fp>-<package-id>-<date>.json.revoke` expresses a revocation of the above file.
-    - `<id-fp>-<package-id>-<date>.json.revoke.sig` expresses the signature of the above file.
+    - `<id-fp>-<package-id>-<date>.json.sig` is the detached signature of the audit.
+    - `<id-fp>-<package-id>-<date>.revoke.json` expresses a revocation of the audit.
+    - `<id-fp>-<package-id>-<date>.revoke.json.sig` is the detached signature of the revocation.
 
 We decide that a key for an identity is valid by checking that it hasn't been revoked.
 

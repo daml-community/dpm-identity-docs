@@ -17,7 +17,7 @@ To generate a `gpg` key, run:
 gpg --full-generate-key
 ```
 
-And follow the instruction prompt, selecting `(1) RSA and RSA`. After completing the instructions, the resulting screen will show the public key fingerprint:
+Follow the prompts, selecting `(1) RSA and RSA`. After completing the instructions, the resulting screen will show the public key fingerprint:
 ```
 pub     rsa3072 2026-09-07 [SC]
         AAAA AAAA AAAA AAAA AAAA  AAAA AAAA AAAA AAAA AAAA
@@ -42,10 +42,10 @@ To configure git properly, edit your git configuration file so that the followin
 ```
 
 ## Adding gpg keys to GitHub
-To export your gpg public key and copy it to the clipboard run:
+To export your gpg public key and copy it to the clipboard, run:
 
 ```
 gpg --export --armor "<fingerprint>" | pbcopy
 ```
 
-And follow the process outlined [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
+Then follow the process outlined [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).

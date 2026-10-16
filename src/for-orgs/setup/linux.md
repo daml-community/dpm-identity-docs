@@ -1,12 +1,10 @@
 # Linux Setup
-Install `gnupg` and `git` through your distribution's package manager. To install gittuf on linux either install through your distribution's package manager, or install [go](https://go.dev/), then run the following commands:
+Install `gnupg` and `git` through your distribution's package manager. To install `gittuf` on Linux, either install it through your distribution's package manager or, to install the latest version from source, install [Go](https://go.dev/) and run the following commands:
 
 ```sh
 go install github.com/gittuf/gittuf@latest
 go install github.com/gittuf/gittuf/internal/git-remote-gittuf@latest
 ```
-
-To install the latest version from source.
 
 ## Configuring `git` and `gpg`
 Git must be configured to use `gpg` to sign commits. To do so we need to:
@@ -18,7 +16,7 @@ To generate a `gpg` key, run:
 gpg --full-generate-key
 ```
 
-And follow the instruction prompt, selecting `(1) RSA and RSA`. After completing the instructions, the resulting screen will show the public key fingerprint:
+Follow the prompts, selecting `(1) RSA and RSA`. After completing the instructions, the resulting screen will show the public key fingerprint:
 ```
 pub     rsa3072 2026-09-07 [SC]
         AAAA AAAA AAAA AAAA AAAA  AAAA AAAA AAAA AAAA AAAA
@@ -43,10 +41,10 @@ To configure git properly, edit your git configuration file (`~/.config/git/conf
 ```
 
 ## Adding gpg keys to GitHub
-To export your gpg public key and copy it to the clipboard run:
+To export your gpg public key and copy it to the clipboard, run:
 
 ```
 gpg --export --armor "<fingerprint>" | wl-copy
 ```
 
-And follow the process outlined [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
+Then follow the process outlined [here](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account).

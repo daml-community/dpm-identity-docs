@@ -1,19 +1,18 @@
-# Adding a New Maintainer
+# Adding a New Committee Member
 ## Prerequisites
-Before promoting an organisation to be a **maintainer**, the organisation must decide on a keyholder responsible for carrying out responsibilities as a **maintainer**. The following information needs to be known:
+Before promoting an organisation to be a **committee member**, the organisation must decide on a keyholder responsible for carrying out its duties as a **committee member**. The following information needs to be known:
 
 - The keyholder's `gpg` key
 
 - The keyholder's GitHub **username** and **id**
 
-> [!NOTE] A user's GitHub id can easily be found from their username via the following http endpoint:
+> [!NOTE] A user's GitHub id can easily be found from their username via the following HTTP endpoint:
 > ```sh
-> curl -s https://api.github.com/users/<username>
-> | jq '.id'
+> curl -s https://api.github.com/users/<username> | jq '.id'
 > ```
 
 ## Process
-A current **maintainer** must then:
+A current **committee member** must then:
 - Add the identity of the new organisation as a **policy signer**:
   ```sh
   gittuf policy add-person -k "gpg:<current-member-gpg-key>" --public-key "gpg:<new-member-gpg-key>" --person-ID "<new-member-name>" --associated-identity "https://gittuf.dev/github-app::<new-member-github-username>+<new-member-github-id>"

@@ -25,14 +25,14 @@ Helper commands are provided to check that the repo satisfies `gittuf` policy. R
 
 **Linux/macOS**
 
-From bash:
+From Bash:
 ```sh
 sh ./ci/verify.sh
 ```
 
 **Windows**
 
-From powershell:
+From PowerShell:
 ```ps1
 .\ci\verify.ps1
 ```
@@ -43,7 +43,7 @@ The following demonstrates a user violating this policy by creating the files:
   - `identities/my-id/meta.json`
   - `identities/my-id/my-fp/key.asc`
 
-Without the changes being approved by two council members.
+without the changes being approved by two committee members.
 
 ```sh
 git checkout master
@@ -51,7 +51,7 @@ mkdir -p identities/my-id/my-fp/
 touch identities/my-id/meta.json
 touch identities/my-id/my-fp/key.asc
 git add .
-git commit -m “Add my-id without council approval”
+git commit -m "Add my-id without committee approval"
 gittuf rsl record master --local-only
 sh ci/verify.sh
 ```

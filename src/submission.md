@@ -15,6 +15,8 @@ The submission process is as follows:
 3. The council members each decide whether the changes are appropriate, and approves/denies the review.
 4. Anyone merges the PR.
 
+For an example PR, see [here](https://github.com/daml-community/dpm-identity/pull/24)
+
 ## Governance and M7
 Note that in step (3), we haven't described an explicit set of rules to decide what "changes are appropriate" means. This explicit policy is a priority for later milestones (specifically Milestone 7), as currently the identites in the repository **will not change**. We are in the process of formalising a governance policy together with Digital Asset. The draft policy can be found [here](./M1GovernanceDraft.pdf). 
 

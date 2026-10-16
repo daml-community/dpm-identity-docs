@@ -8,7 +8,7 @@ gittuf clone https://github.com/daml-community/dpm-identity.git
 *NOTE:* cloning via `gittuf` is important, as it pulls the correct git refs.
 
 ## Listing the `gittuf` policy
-The gittuf policy can be listed via running:
+Ensuring that you have followed the instructions above to install `gittuf`, `gpg` and clone the repo, the gittuf policy can be listed via running:
 
 *To list all principals*
 ```sh
@@ -21,7 +21,7 @@ gittuf policy list-rules
 ```
 
 ## Verifying the `gittuf` policy
-Helper commands are provided to check that the repo satisfies `gittuf` policy. Run the following:
+Ensuring that you have followed the instructions above to install `gittuf`, `gpg` and clone the repo, helper commands are provided to check that the repo satisfies `gittuf` policy. Run the following:
 
 **Linux/macOS**
 
@@ -43,16 +43,24 @@ The following demonstrates a user violating this policy by creating the files:
   - `identities/my-id/meta.json`
   - `identities/my-id/my-fp/key.asc`
 
-without the changes being approved by two committee members.
+without the changes being approved by two committee members. Ensuring that you have followed the instructions above to install `gittuf`, `gpg` and clone the repo, run the following:
 
 ```sh
 git checkout master
+
+# Create a new identity my-id
 mkdir -p identities/my-id/my-fp/
 touch identities/my-id/meta.json
 touch identities/my-id/my-fp/key.asc
+
+# Commit these changes
 git add .
 git commit -m "Add my-id without committee approval"
+
+# Record the changes to gittuf
 gittuf rsl record master --local-only
+
+# Verify that the repository policy is not satisfied
 sh ci/verify.sh
 ```
 

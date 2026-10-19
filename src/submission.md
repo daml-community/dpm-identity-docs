@@ -4,14 +4,14 @@ Currently any changes to the repository need approval from 2 of 2 of the followi
 - Canton Foundation
 - Obsidian Systems
 
-This is dictated by the repo's gittuf policy.
-The approval process takes place in GitHub via a PR. One positive review corresponds to one approval vote.
+This is dictated by the repo's gittuf policy (see [here](./repo-structure/the-committee#gittuf-policy-m1) for specifics).
+As we have initially elected to allow using gitthub authentication to verify one's identity, the approval process will take place in GitHub via a PR. One positive review corresponds to one approval vote.
 
 The submission process is as follows:
 
 1. A submitter (anyone) opens a GitHub PR, containing the changes to the repository.
 2. The submitter requests a review from both committee members (**Canton Foundation** and **Obsidian Systems**).
-3. The committee members each decide whether the changes are appropriate, and approve/deny the review.
+3. The committee members each decide whether the changes are appropriate (see below), and approve/deny the review.
 4. Anyone merges the PR.
 
 For an example PR, see [here](https://github.com/daml-community/dpm-identity/pull/24).

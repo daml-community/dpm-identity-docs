@@ -9,6 +9,5 @@ The initial proposal [references](https://github.com/canton-foundation/canton-de
 These will be referred to as the **committee**.
 The current committee members are:
 
-- **Digital Asset**
 - **Canton Foundation**
 - **Obsidian Systems**

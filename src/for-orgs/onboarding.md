@@ -1,5 +1,5 @@
 # Onboarding
-Adding keys to the repository is done through a GitHub PR. A PR can be merged when it meets the `gittuf` security requirements for the repo, which currently amount to two votes from **committee members**.
+Adding keys to the repository is done through a GitHub PR. A PR can be merged when it meets the `gittuf` security requirements for the repo, which currently amount to 2 of 2 votes from **committee members**.
 
 Before opening a PR, make sure:
 
@@ -49,4 +49,4 @@ Before opening a PR, make sure:
         ```
 3. Push your changes to the remote on a new branch. (Collaborator status is required.)
 4. Open a PR, and request reviews from the **committee**.
-5. When 2 committee members approve, the PR can be merged.
+5. When 2 of 2 committee members approve, the PR can be merged.

@@ -1,7 +1,6 @@
 # Submission Process
-Currently any changes to the repository need approval from 2 out of 3 of the following committee members:
+Currently any changes to the repository need approval from 2 of 2 of the following committee members:
 
-- Digital Asset
 - Canton Foundation
 - Obsidian Systems
 
@@ -11,7 +10,7 @@ The approval process takes place in GitHub via a PR. One positive review corresp
 The submission process is as follows:
 
 1. A submitter (anyone) opens a GitHub PR, containing the changes to the repository.
-2. The submitter requests a review from the three committee members.
+2. The submitter requests a review from both committee members (**Canton Foundation** and **Obsidian Systems**).
 3. The committee members each decide whether the changes are appropriate, and approve/deny the review.
 4. Anyone merges the PR.
 

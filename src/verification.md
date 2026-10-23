@@ -47,7 +47,7 @@ without the changes being approved by two committee members. Ensuring that you h
 
 ```sh
 # Checkout master
-git checkout master
+git checkout -B master 97443173add138eac6c1e0444bedb4a18d8e15f5
 
 # Create a new identity my-id
 mkdir -p identities/my-id/my-fp/

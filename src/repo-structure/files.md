@@ -14,10 +14,11 @@ identities/
             evidence/
                 ...
 audits/
-    <id-fp>-<package-id>-<date>.json
-    <id-fp>-<package-id>-<date>.json.sig
-    <id-fp>-<package-id>-<date>.revoke.json
-    <id-fp>-<package-id>-<date>.revoke.json.sig
+    <package-id>/
+        <identity>-<date>.json
+        <identity>-<date>.json.sig
+        <identity>-<date>.revoke.json
+        <identity>-<date>.revoke.json.sig
 ```
 
 Where:
@@ -29,11 +30,12 @@ Where:
             - `key.asc`: The exported GPG public key. Generated via `gpg --export --armor`
             - `revoke.json`: A JSON file indicating that the key has been revoked and why.
             - `evidence/`: Directory containing evidence used by the committee when evaluating the key's identity
-- `audits/` contains audits:
-    - `<id-fp>-<package-id>-<date>.json` is an audit of `<package-id>` by `<id-fp>` on `<date>`. Note: No claims are made by this filename, it's solely to reduce collisions. All of the significant content is contained within the file. It conforms to the specification outlined in `schemas/audit-report.json5`.
-    - `<id-fp>-<package-id>-<date>.json.sig` is the detached signature of the audit.
-    - `<id-fp>-<package-id>-<date>.revoke.json` expresses a revocation of the audit.
-    - `<id-fp>-<package-id>-<date>.revoke.json.sig` is the detached signature of the revocation.
+- `audits/` contains subfolders corresponding to package ids:
+    - `<package-id>/` contains all audits of a package id
+        - `<identity>-<date>.json` is an audit of `<package-id>` by `<id-fp>` on `<date>`. Note: No claims are made by this filename, it's solely to reduce collisions. All of the significant content is contained within the file. It conforms to the specification outlined in `schemas/audit-report.json5`.
+        - `<identity>-<date>.json.sig` is the detached signature of the audit.
+        - `<identity>-<date>.revoke.json` expresses a revocation of the audit.
+        - `<identity>-<date>.revoke.json.sig` is the detached signature of the revocation.
 
 We decide that a key for an identity is valid by checking that it hasn't been revoked.
 
